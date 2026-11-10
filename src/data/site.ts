@@ -2,8 +2,8 @@
 export const site = {
   name: 'EginyanConstruction',
   owner: 'Armen Eginyan',
-  phoneDisplay: '(778) 987-4471',
-  phoneHref: 'tel:+17789874471',
+  phoneDisplay: '(778) 918-5188',
+  phoneHref: 'tel:+17789185188',
   email: 'armeneginyan@gmail.com',
 };
 

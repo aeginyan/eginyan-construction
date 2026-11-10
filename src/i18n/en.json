@@ -16,7 +16,7 @@
     "language": "Language"
   },
   "hero": {
-    "eyebrow": "Renovations · Metro Vancouver",
+    "eyebrow": "Renovations · Metro Vancouver & Lower Mainland",
     "title": "Renovation work I'm proud to put my name on.",
     "text": "Kitchens, bathrooms, tile, flooring and stairs across Metro Vancouver. When you call, you talk to me — and I'm the one who does the work.",
     "viewWork": "View My Work",
@@ -31,7 +31,7 @@
     "facts": [
       {
         "title": "Metro Vancouver",
-        "text": "and surrounding areas"
+        "text": "and the Lower Mainland"
       },
       {
         "title": "One point of contact",
@@ -100,11 +100,11 @@
     "emailLabel": "Email",
     "emailAction": "Email",
     "areaTitle": "Service area",
-    "areaText": "Metro Vancouver and surrounding areas.",
+    "areaText": "Metro Vancouver and the Lower Mainland.",
     "langTitle": "Languages",
     "langText": "English, Russian and Armenian."
   },
   "footer": {
-    "area": "Serving Metro Vancouver & surrounding areas"
+    "area": "Serving Metro Vancouver & the Lower Mainland"
   }
 }

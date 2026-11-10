@@ -4,7 +4,7 @@ import '@fontsource-variable/inter';
 import '../styles/global.css';
 import Header from '../components/Header.astro';
 import Footer from '../components/Footer.astro';
-import { t, pageUrl } from '../i18n';
+import { t, pageUrl, root } from '../i18n';
 import type { Lang, Page } from '../data/site';
 
 interface Props { lang: Lang; page: Page }
@@ -19,7 +19,8 @@ const ruUrl = pageUrl('ru', page);
     <meta name="viewport" content="width=device-width, initial-scale=1" />
     <title>{d.meta.titles[page]}</title>
     <meta name="description" content={d.meta.description} />
-    <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+    <link rel="icon" type="image/svg+xml" href={`${root}/favicon.svg`} />
+    {root !== '' && <meta name="robots" content="noindex" />}
     <link rel="alternate" hreflang="en" href={pageUrl('en', page)} />
     <link rel="alternate" hreflang="ru" href={ruUrl} />
     <link rel="alternate" hreflang="x-default" href={pageUrl('en', page)} />

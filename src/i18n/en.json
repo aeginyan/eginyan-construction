@@ -29,18 +29,36 @@
     "p2": "I take on a limited number of projects at a time so each one gets my full attention. I show up when I say I will, keep the work area clean, and don't call a job finished until the details are right.",
     "photoAlt": "Armen Eginyan on the job",
     "facts": [
-      { "title": "Metro Vancouver", "text": "and surrounding areas" },
-      { "title": "One point of contact", "text": "You deal with me, start to finish" },
-      { "title": "English & Русский", "text": "Happy to talk in either language" }
+      {
+        "title": "Metro Vancouver",
+        "text": "and surrounding areas"
+      },
+      {
+        "title": "One point of contact",
+        "text": "You deal with me, start to finish"
+      },
+      {
+        "title": "English · Русский · Հայերեն",
+        "text": "Happy to talk in any of them"
+      }
     ]
   },
   "how": {
     "eyebrow": "How I Work",
     "title": "What you can count on",
     "items": [
-      { "title": "Straight answers", "text": "A clear quote up front and honest advice — even when that means a smaller job." },
-      { "title": "Attention to detail", "text": "Clean lines, level floors, tight joints. The finishing details are what you see every day." },
-      { "title": "Respect for your home", "text": "I protect the rooms I'm not working in and clean up at the end of every day." }
+      {
+        "title": "Straight answers",
+        "text": "A clear quote up front and honest advice — even when that means a smaller job."
+      },
+      {
+        "title": "Attention to detail",
+        "text": "Clean lines, level floors, tight joints. The finishing details are what you see every day."
+      },
+      {
+        "title": "Respect for your home",
+        "text": "I protect the rooms I'm not working in and clean up at the end of every day."
+      }
     ]
   },
   "work": {
@@ -84,7 +102,7 @@
     "areaTitle": "Service area",
     "areaText": "Metro Vancouver and surrounding areas.",
     "langTitle": "Languages",
-    "langText": "English and Russian."
+    "langText": "English, Russian and Armenian."
   },
   "footer": {
     "area": "Serving Metro Vancouver & surrounding areas"

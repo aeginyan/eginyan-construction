@@ -27,5 +27,8 @@ export const fmt = (s: string, vars: Record<string, string | number>) =>
 
 const slugs: Record<Page, string> = { about: '', gallery: 'gallery/', contact: 'contact/' };
 
+/** Site root without a trailing slash: '' normally, '/eginyan-construction' on the GitHub Pages preview. */
+export const root = import.meta.env.BASE_URL.replace(/\/$/, '');
+
 export const pageUrl = (lang: Lang, page: Page) =>
-  (lang === 'en' ? '/' : `/${lang}/`) + slugs[page];
+  root + (lang === 'en' ? '/' : `/${lang}/`) + slugs[page];

@@ -1,0 +1,4 @@
+# Keep search engines from indexing the temporary *.pages.dev address.
+# Only applies to the pages.dev hostname, not the real domain later.
+https://:project.pages.dev/*
+  X-Robots-Tag: noindex

@@ -1,0 +1,30 @@
+---
+import { t, pageUrl } from '../i18n';
+import { site, type Lang, type Page } from '../data/site';
+
+interface Props { lang: Lang }
+const { lang } = Astro.props;
+const d = t(lang);
+const pages: Page[] = ['about', 'gallery', 'contact'];
+---
+<footer class="footer container">
+  <div class="wordmark">{site.name}</div>
+  <div class="meta">{d.footer.area} · © {new Date().getFullYear()}</div>
+  <nav aria-label="Footer">
+    {pages.map((p) => <a href={pageUrl(lang, p)}>{d.nav[p]}</a>)}
+  </nav>
+</footer>
+
+<style>
+  .footer {
+    background: var(--ink); color: #bfb5a8; font-size: 14px;
+    display: flex; justify-content: space-between; align-items: center; gap: 16px 32px; flex-wrap: wrap;
+    padding-block: 48px;
+  }
+  .wordmark { font-family: var(--serif); font-weight: 600; font-size: 20px; color: var(--cream); }
+  nav { display: flex; gap: 28px; }
+  nav a:hover { color: var(--cream); }
+  @media (max-width: 820px) {
+    .footer { flex-direction: column; align-items: flex-start; padding-block: 36px; }
+  }
+</style>

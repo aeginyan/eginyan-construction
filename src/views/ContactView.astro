@@ -1,0 +1,74 @@
+---
+import { Image } from 'astro:assets';
+import Base from '../layouts/Base.astro';
+import Icon from '../components/Icon.astro';
+import { t } from '../i18n';
+import { site, type Lang } from '../data/site';
+import { getHeroImage } from '../lib/images';
+
+interface Props { lang: Lang }
+const { lang } = Astro.props;
+const d = t(lang);
+const photo = getHeroImage();
+---
+<Base lang={lang} page="contact">
+  <section class="contact container">
+    <div class="text">
+      <div class="eyebrow">{d.contact.eyebrow}</div>
+      <h1>{d.contact.title}</h1>
+      <p class="lead">{d.contact.text}</p>
+
+      <a class="card" href={site.phoneHref}>
+        <span class="ic"><Icon name="phone" /></span>
+        <span class="body"><span class="k">{d.contact.callLabel}</span><span class="v">{site.phoneDisplay}</span></span>
+        <span class="go">{d.contact.callAction} →</span>
+      </a>
+      <a class="card" href={`mailto:${site.email}`}>
+        <span class="ic"><Icon name="mail" /></span>
+        <span class="body"><span class="k">{d.contact.emailLabel}</span><span class="v">{site.email}</span></span>
+        <span class="go">{d.contact.emailAction} →</span>
+      </a>
+
+      <div class="info">
+        <div class="box"><h3>{d.contact.areaTitle}</h3><p>{d.contact.areaText}</p></div>
+        <div class="box"><h3>{d.contact.langTitle}</h3><p>{d.contact.langText}</p></div>
+      </div>
+    </div>
+    {photo
+      ? <Image class="photo" src={photo} alt="" widths={[480, 800, 1200]} sizes="(max-width: 900px) 0px, 45vw" />
+      : <div class="photo ph" />}
+  </section>
+</Base>
+
+<style>
+  .contact { display: grid; grid-template-columns: 1.1fr 1fr; gap: clamp(40px, 5.5vw, 80px); padding-block: clamp(48px, 6.5vw, 96px); align-items: stretch; }
+  .text { display: flex; flex-direction: column; gap: 22px; }
+  h1 { font-size: clamp(34px, 3.8vw, 54px); line-height: 1.12; }
+  .card {
+    background: var(--white); border: 1px solid var(--line); border-radius: 10px;
+    padding: clamp(18px, 2.2vw, 30px); display: flex; gap: 20px; align-items: center;
+    transition: border-color 0.15s, box-shadow 0.15s;
+  }
+  .card:hover { border-color: var(--wood); box-shadow: 0 6px 20px rgba(42, 37, 34, 0.07); }
+  .ic { width: 56px; height: 56px; border-radius: 50%; background: var(--green); color: var(--cream); display: grid; place-items: center; flex: none; }
+  .ic :global(svg) { width: 24px; height: 24px; }
+  .body { display: flex; flex-direction: column; min-width: 0; }
+  .k { font-size: 12px; letter-spacing: 0.12em; text-transform: uppercase; color: var(--muted); font-weight: 600; }
+  .v { font-family: var(--serif); font-size: clamp(19px, 2vw, 28px); font-weight: 600; margin-top: 2px; overflow-wrap: anywhere; }
+  .go { margin-left: auto; font-size: 15px; font-weight: 600; color: var(--wood); white-space: nowrap; }
+  .info { display: grid; grid-template-columns: 1fr 1fr; gap: 16px; }
+  .box { background: var(--sand); border-radius: 10px; padding: clamp(20px, 2vw, 28px); }
+  .box h3 { font-size: 18px; margin-bottom: 8px; }
+  .box p { font-size: 15px; color: var(--muted); }
+  .photo { width: 100%; height: 100%; min-height: 480px; object-fit: cover; border-radius: var(--radius); }
+
+  @media (max-width: 900px) {
+    .contact { grid-template-columns: 1fr; }
+    .photo { display: none; }
+  }
+  @media (max-width: 560px) {
+    .go { display: none; }
+    .ic { width: 48px; height: 48px; }
+    .info { grid-template-columns: 1fr; }
+  }
+</style>

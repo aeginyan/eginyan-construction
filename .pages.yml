@@ -1,0 +1,40 @@
+# Pages CMS configuration — https://pagescms.org/docs/
+# Each category is its own media folder. Uploading a photo to one of these
+# folders adds it to that category's gallery on both the English and Russian site.
+media:
+  - name: kitchens
+    label: "Kitchens / Кухни"
+    input: src/assets/gallery/kitchens
+    output: /src/assets/gallery/kitchens
+    extensions: [jpg, jpeg, png, webp]
+    rename: safe
+  - name: bathrooms
+    label: "Bathrooms / Ванные комнаты"
+    input: src/assets/gallery/bathrooms
+    output: /src/assets/gallery/bathrooms
+    extensions: [jpg, jpeg, png, webp]
+    rename: safe
+  - name: tile
+    label: "Tile / Плитка"
+    input: src/assets/gallery/tile
+    output: /src/assets/gallery/tile
+    extensions: [jpg, jpeg, png, webp]
+    rename: safe
+  - name: flooring
+    label: "Flooring / Полы"
+    input: src/assets/gallery/flooring
+    output: /src/assets/gallery/flooring
+    extensions: [jpg, jpeg, png, webp]
+    rename: safe
+  - name: stairs
+    label: "Stairs / Лестницы"
+    input: src/assets/gallery/stairs
+    output: /src/assets/gallery/stairs
+    extensions: [jpg, jpeg, png, webp]
+    rename: safe
+  - name: site
+    label: "Site photos (hero.jpg = top of home page, owner.jpg = About photo)"
+    input: src/assets/site
+    output: /src/assets/site
+    extensions: [jpg, jpeg, png, webp]
+    rename: safe

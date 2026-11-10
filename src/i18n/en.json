@@ -1,0 +1,92 @@
+{
+  "meta": {
+    "description": "Kitchen, bathroom, tile, flooring and stair renovations across Metro Vancouver. Talk directly to Armen — the person who does the work.",
+    "titles": {
+      "about": "EginyanConstruction — Renovations in Metro Vancouver",
+      "gallery": "Project Gallery — EginyanConstruction",
+      "contact": "Contact — EginyanConstruction"
+    }
+  },
+  "nav": {
+    "about": "About",
+    "gallery": "Gallery",
+    "contact": "Contact",
+    "call": "Call",
+    "menu": "Menu",
+    "language": "Language"
+  },
+  "hero": {
+    "eyebrow": "Renovations · Metro Vancouver",
+    "title": "Renovation work I'm proud to put my name on.",
+    "text": "Kitchens, bathrooms, tile, flooring and stairs across Metro Vancouver. When you call, you talk to me — and I'm the one who does the work.",
+    "viewWork": "View My Work",
+    "getInTouch": "Get in Touch"
+  },
+  "about": {
+    "eyebrow": "About",
+    "title": "Hi, I'm Armen — local, hands-on, and easy to reach.",
+    "p1": "I run EginyanConstruction myself. From the first visit to the final walkthrough, you deal with me directly — no salespeople, no hand-offs, no guessing who's showing up at your home.",
+    "p2": "I take on a limited number of projects at a time so each one gets my full attention. I show up when I say I will, keep the work area clean, and don't call a job finished until the details are right.",
+    "photoAlt": "Armen Eginyan on the job",
+    "facts": [
+      { "title": "Metro Vancouver", "text": "and surrounding areas" },
+      { "title": "One point of contact", "text": "You deal with me, start to finish" },
+      { "title": "English & Русский", "text": "Happy to talk in either language" }
+    ]
+  },
+  "how": {
+    "eyebrow": "How I Work",
+    "title": "What you can count on",
+    "items": [
+      { "title": "Straight answers", "text": "A clear quote up front and honest advice — even when that means a smaller job." },
+      { "title": "Attention to detail", "text": "Clean lines, level floors, tight joints. The finishing details are what you see every day." },
+      { "title": "Respect for your home", "text": "I protect the rooms I'm not working in and clean up at the end of every day." }
+    ]
+  },
+  "work": {
+    "eyebrow": "My Work",
+    "title": "Browse by project type",
+    "viewAll": "View Full Gallery"
+  },
+  "categories": {
+    "kitchens": "Kitchens",
+    "bathrooms": "Bathrooms",
+    "tile": "Tile",
+    "flooring": "Flooring",
+    "stairs": "Stairs"
+  },
+  "cta": {
+    "title": "Planning a renovation?",
+    "text": "Call or email me and I'll get back to you quickly.",
+    "emailMe": "Email me"
+  },
+  "gallery": {
+    "title": "Project Gallery",
+    "intro": "Recent projects from around Metro Vancouver. Scroll through each category, or pick one above to jump straight to it.",
+    "photo": "{n} photo",
+    "photos": "{n} photos",
+    "comingSoon": "Photos coming soon",
+    "photoAlt": "{category} renovation — photo {n}",
+    "prev": "Previous photo",
+    "next": "Next photo",
+    "close": "Close",
+    "ctaTitle": "Like what you see?",
+    "ctaText": "Tell me about your project."
+  },
+  "contact": {
+    "eyebrow": "Contact",
+    "title": "Let's talk about your project.",
+    "text": "The quickest way to reach me is by phone — call or text anytime. You can also email me a few details and photos of the space, and I'll get back to you.",
+    "callLabel": "Call or text",
+    "callAction": "Call",
+    "emailLabel": "Email",
+    "emailAction": "Email",
+    "areaTitle": "Service area",
+    "areaText": "Metro Vancouver and surrounding areas.",
+    "langTitle": "Languages",
+    "langText": "English and Russian."
+  },
+  "footer": {
+    "area": "Serving Metro Vancouver & surrounding areas"
+  }
+}

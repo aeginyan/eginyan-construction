@@ -48,16 +48,16 @@
     "title": "What you can count on",
     "items": [
       {
-        "title": "Straight answers",
-        "text": "A clear quote up front and honest advice — even when that means a smaller job."
+        "title": "Transparent communication",
+        "text": "A clear quote up front and honest advice — regardless of the size of the project."
       },
       {
         "title": "Attention to detail",
-        "text": "Clean lines, level floors, tight joints. The finishing details are what you see every day."
+        "text": "Every detail matters — it's what makes your home feel comfortable and cozy."
       },
       {
         "title": "Respect for your home",
-        "text": "I protect the rooms I'm not working in and clean up at the end of every day."
+        "text": "I treat your home with care and keep my work area clean."
       }
     ]
   },
@@ -80,7 +80,7 @@
   },
   "gallery": {
     "title": "Project Gallery",
-    "intro": "Recent projects from around Metro Vancouver. Scroll through each category, or pick one above to jump straight to it.",
+    "intro": "Recent projects from around Metro Vancouver and the Lower Mainland.",
     "photo": "{n} photo",
     "photos": "{n} photos",
     "comingSoon": "Photos coming soon",

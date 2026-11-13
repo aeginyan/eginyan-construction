@@ -4,7 +4,7 @@ import Base from '../layouts/Base.astro';
 import Icon from '../components/Icon.astro';
 import CtaBand from '../components/CtaBand.astro';
 import { t, pageUrl } from '../i18n';
-import { categories, type Lang } from '../data/site';
+import { site, categories, type Lang } from '../data/site';
 import { getGallery, getHeroImage, getOwnerImage } from '../lib/images';
 
 interface Props { lang: Lang }
@@ -26,7 +26,7 @@ const galleryUrl = pageUrl(lang, 'gallery');
       <p>{d.hero.text}</p>
       <div class="hero-actions">
         <a class="btn btn-light" href={galleryUrl}>{d.hero.viewWork} <Icon name="arrow-right" /></a>
-        <a class="btn btn-ghost" href={pageUrl(lang, 'contact')}>{d.hero.getInTouch}</a>
+        <a class="btn btn-ghost" href={site.phoneHref}><Icon name="phone" /> {d.nav.call} {site.phoneDisplay}</a>
       </div>
     </div>
   </section>
@@ -63,13 +63,7 @@ const galleryUrl = pageUrl(lang, 'gallery');
   </section>
 
   <section class="work container">
-    <div class="work-head">
-      <div>
-        <div class="eyebrow">{d.work.eyebrow}</div>
-        <h2>{d.work.title}</h2>
-      </div>
-      <a class="btn btn-outline" href={galleryUrl}>{d.work.viewAll} <Icon name="arrow-right" /></a>
-    </div>
+    <h2>{d.work.title}</h2>
     <div class="cats">
       {categories.map((c) => {
         const first = gallery[c][0];
@@ -120,8 +114,6 @@ const galleryUrl = pageUrl(lang, 'gallery');
   .how-card p { font-size: 15px; color: var(--muted); }
 
   .work { padding-block: clamp(64px, 8vw, 112px); }
-  .work-head { display: flex; justify-content: space-between; align-items: flex-end; gap: 24px; flex-wrap: wrap; }
-  .work-head h2 { margin-top: 12px; }
   .cats { display: grid; grid-template-columns: repeat(5, 1fr); gap: 20px; margin-top: clamp(32px, 4vw, 56px); }
   .cat { display: flex; flex-direction: column; gap: 14px; }
   .cat-img { aspect-ratio: 3 / 4; border-radius: 6px; overflow: hidden; }
@@ -144,7 +136,6 @@ const galleryUrl = pageUrl(lang, 'gallery');
     .hero-actions .btn { flex: 1 1 100%; }
     .facts { grid-template-columns: 1fr; gap: 16px; padding-top: 20px; }
     .fact-text { margin-top: 2px; }
-    .work-head .btn { display: none; }
     .cats { grid-template-columns: 1fr 1fr; gap: 12px; }
     .cat:last-child { grid-column: span 2; }
     .cat:last-child .cat-img { aspect-ratio: 2 / 1; }

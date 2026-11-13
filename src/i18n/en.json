@@ -19,8 +19,7 @@
     "eyebrow": "Renovations · Metro Vancouver & Lower Mainland",
     "title": "Renovation work I'm proud to put my name on.",
     "text": "Kitchens, bathrooms, tile, flooring and stairs across Metro Vancouver. When you call, you talk to me — and I'm the one who does the work.",
-    "viewWork": "View My Work",
-    "getInTouch": "Get in Touch"
+    "viewWork": "View My Work"
   },
   "about": {
     "eyebrow": "About",
@@ -62,9 +61,7 @@
     ]
   },
   "work": {
-    "eyebrow": "My Work",
-    "title": "Browse by project type",
-    "viewAll": "View Full Gallery"
+    "title": "Browse by project type"
   },
   "categories": {
     "kitchens": "Kitchens",
@@ -81,8 +78,6 @@
   "gallery": {
     "title": "Project Gallery",
     "intro": "Recent projects from around Metro Vancouver and the Lower Mainland.",
-    "photo": "{n} photo",
-    "photos": "{n} photos",
     "comingSoon": "Photos coming soon",
     "photoAlt": "{category} renovation — photo {n}",
     "prev": "Previous photo",
@@ -92,7 +87,6 @@
     "ctaText": "Tell me about your project."
   },
   "contact": {
-    "eyebrow": "Contact",
     "title": "Let's talk about your project.",
     "text": "The quickest way to reach me is by phone — call or text anytime. You can also email me a few details and photos of the space, and I'll get back to you.",
     "callLabel": "Call or text",
@@ -102,7 +96,10 @@
     "areaTitle": "Service area",
     "areaText": "Metro Vancouver and the Lower Mainland.",
     "langTitle": "Languages",
-    "langText": "English, Russian and Armenian."
+    "langText": "English, Russian and Armenian.",
+    "reviewTitle": "Worked with me before?",
+    "reviewText": "A quick Google review helps other homeowners find me — I'd really appreciate it.",
+    "reviewAction": "Leave a review on Google"
   },
   "footer": {
     "area": "Serving Metro Vancouver & the Lower Mainland"

@@ -9,10 +9,4 @@ export default defineConfig({
   // Normally '/'. The GitHub Pages preview sets BASE_PATH=/eginyan-construction
   // because it serves the site from a subfolder.
   base: process.env.BASE_PATH || '/',
-
-  i18n: {
-    locales: ['en', 'ru'],
-    defaultLocale: 'en',
-    routing: { prefixDefaultLocale: false },
-  },
 });

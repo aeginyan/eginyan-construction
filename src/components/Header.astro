@@ -1,12 +1,11 @@
 ---
 import Icon from './Icon.astro';
 import { t, pageUrl } from '../i18n';
-import { site, type Lang, type Page } from '../data/site';
+import { site, pages, type Lang, type Page } from '../data/site';
 
 interface Props { lang: Lang; page: Page }
 const { lang, page } = Astro.props;
 const d = t(lang);
-const pages: Page[] = ['about', 'gallery', 'contact'];
 ---
 <header class="header">
   <div class="bar container">
@@ -23,12 +22,13 @@ const pages: Page[] = ['about', 'gallery', 'contact'];
 
     <div class="right">
       <div class="lang" role="group" aria-label={d.nav.language}>
-        <a href={pageUrl('en', page)} hreflang="en" lang="en" data-lang="en" aria-current={lang === 'en' ? 'true' : undefined}>EN</a>
-        <a href={pageUrl('ru', page)} hreflang="ru" lang="ru" data-lang="ru" aria-current={lang === 'ru' ? 'true' : undefined}>RU</a>
+        <a href={pageUrl('en', page)} hreflang="en" lang="en" aria-current={lang === 'en' ? 'true' : undefined}>EN</a>
+        <a href={pageUrl('ru', page)} hreflang="ru" lang="ru" aria-current={lang === 'ru' ? 'true' : undefined}>RU</a>
       </div>
       <a class="btn btn-green call" href={site.phoneHref}>
         <Icon name="phone" /> {site.phoneDisplay}
       </a>
+      <a class="call-icon" href={site.phoneHref} aria-label={`${d.nav.call} ${site.phoneDisplay}`}><Icon name="phone" /></a>
       <button class="burger" type="button" aria-expanded="false" aria-controls="mobile-menu">
         <Icon name="menu" /><span class="sr-only">{d.nav.menu}</span>
       </button>
@@ -39,7 +39,6 @@ const pages: Page[] = ['about', 'gallery', 'contact'];
     {pages.map((p) => (
       <a href={pageUrl(lang, p)} aria-current={p === page ? 'page' : undefined}>{d.nav[p]}</a>
     ))}
-    <a class="btn btn-green" href={site.phoneHref}><Icon name="phone" /> {d.nav.call} {site.phoneDisplay}</a>
   </div>
 </header>
 
@@ -54,7 +53,7 @@ const pages: Page[] = ['about', 'gallery', 'contact'];
   // Remember the visitor's language choice for their next visit.
   document.querySelectorAll<HTMLAnchorElement>('.lang a').forEach((a) =>
     a.addEventListener('click', () => {
-      try { localStorage.setItem('lang', a.dataset.lang!); } catch {}
+      try { localStorage.setItem('lang', a.lang); } catch {}
     }),
   );
 </script>
@@ -83,16 +82,21 @@ const pages: Page[] = ['about', 'gallery', 'contact'];
   .lang a:hover { color: var(--ink); }
   .lang a[aria-current='true'] { background: var(--ink); color: var(--cream); }
 
+  .call-icon {
+    display: none; width: 40px; height: 40px; border-radius: 50%; flex: none;
+    background: var(--green); color: var(--cream); place-items: center;
+  }
+  .call-icon :global(svg) { width: 18px; height: 18px; }
+
   .burger { display: none; background: none; border: 0; padding: 8px; margin-right: -8px; cursor: pointer; }
   .burger :global(svg) { width: 26px; height: 26px; }
 
   .mobile-menu { display: flex; flex-direction: column; padding-bottom: 20px; border-top: 1px solid var(--line); }
   .mobile-menu[hidden] { display: none; }
-  .mobile-menu a:not(.btn) { padding: 14px 0; font-size: 17px; font-weight: 500; border-bottom: 1px solid var(--line); }
+  .mobile-menu a { padding: 14px 0; font-size: 17px; font-weight: 500; border-bottom: 1px solid var(--line); }
   .mobile-menu a[aria-current='page'] { color: var(--wood); }
-  .mobile-menu .btn { margin-top: 18px; }
 
-  @media (max-width: 1080px) { .nav { gap: 28px; } .call { display: none; } }
+  @media (max-width: 1080px) { .nav { gap: 28px; } .call { display: none; } .call-icon { display: grid; } }
   @media (max-width: 820px) {
     .bar { height: 68px; }
     .nav { display: none; }
@@ -104,5 +108,13 @@ const pages: Page[] = ['about', 'gallery', 'contact'];
     .lang a { padding: 4px 9px; }
   }
   @media (min-width: 821px) { .mobile-menu { display: none !important; } }
-  @media (max-width: 360px) { .wordmark { font-size: 15px; } .logo { gap: 8px; } }
+  /* Narrow phones: the toggle shows only the other language */
+  @media (max-width: 480px) {
+    .lang a[aria-current='true'] { display: none; }
+    .right { gap: 8px; }
+    .logo { gap: 8px; }
+    .wordmark { font-size: 15.5px; }
+    .call-icon { width: 36px; height: 36px; }
+  }
+  @media (max-width: 370px) { .wordmark { font-size: 14px; } .mark { width: 28px; height: 28px; font-size: 14px; } }
 </style>

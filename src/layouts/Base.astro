@@ -5,12 +5,29 @@ import '../styles/global.css';
 import Header from '../components/Header.astro';
 import Footer from '../components/Footer.astro';
 import { t, pageUrl, root } from '../i18n';
+import { site, profiles } from '../data/site';
 import type { Lang, Page } from '../data/site';
 
 interface Props { lang: Lang; page: Page }
 const { lang, page } = Astro.props;
 const d = t(lang);
 const ruUrl = pageUrl('ru', page);
+
+// Business details for search engines (schema.org).
+const jsonLd = {
+  '@context': 'https://schema.org',
+  '@type': 'HomeAndConstructionBusiness',
+  name: site.name,
+  founder: { '@type': 'Person', name: site.owner },
+  telephone: site.phoneHref.replace(/^tel:/, ''),
+  email: site.email,
+  areaServed: [
+    { '@type': 'AdministrativeArea', name: 'Metro Vancouver' },
+    { '@type': 'Place', name: 'Lower Mainland' },
+  ],
+  knowsLanguage: ['en', 'ru', 'hy'],
+  ...(profiles.length > 0 && { sameAs: profiles.map((p) => p.url) }),
+};
 ---
 <!doctype html>
 <html lang={lang}>
@@ -25,6 +42,7 @@ const ruUrl = pageUrl('ru', page);
     <link rel="alternate" hreflang="ru" href={ruUrl} />
     <link rel="alternate" hreflang="x-default" href={pageUrl('en', page)} />
     <meta name="theme-color" content="#f7f2ea" />
+    <script type="application/ld+json" set:html={JSON.stringify(jsonLd).replace(/</g, '\\u003c')} />
     {lang === 'en' && (
       <script is:inline define:vars={{ ruUrl }}>
         // Send returning visitors who picked Russian to the Russian page,
